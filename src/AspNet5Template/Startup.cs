@@ -70,7 +70,7 @@ namespace AspNet5Template{
 
             //使用MVC服務，並且載入預設路由設定
             app.UseMvc(ConfigureMvcRoute);
-
+                        
             /*WebSocket設定範例
             app.UseWebSockets();
             app.Map("/api/chatroom/socket", WebSocketApi => {

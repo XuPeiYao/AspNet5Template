@@ -10,6 +10,7 @@ namespace AspNet5Template.Controllers{
         // GET: api/values
         //[HttpGet] 此為REST設定，僅在RouteAttribute作用時作用
         public IEnumerable<string> Get(){
+            int g = 2 / (100 - (int)Math.Pow(10,2));
             return new string[] { "value1", "value2" };
         }
 

@@ -38,11 +38,11 @@ namespace AspNet5Template.Extensions.AspNet{
             }
         }
 
-        //此方法在執行階段被呼叫，使用此方法設定MVC路由規則
+        //此方法在執行階段被呼叫，使用此方法設定MVC預設路由規則
         public void ConfigureMvcRoute(IRouteBuilder routes) {
             //取得所有路由規則
             var rules = Configuration.GetSection("MvcRoutingRules")?.GetChildren();
-
+            
             //未設定則跳脫
             if (rules == null) return;
 
@@ -79,8 +79,7 @@ namespace AspNet5Template.Extensions.AspNet{
                 ErrorPages[int.Parse(obj.StatusCode)] = obj.FilePath;
             }
 
-            //狀態對應
-            app.UseStatusCodePages(builder => {
+            Action<IApplicationBuilder> ErrorHandler = (builder) => {
                 builder.Run(handler => {
                     return Task.Run(() => {
                         //取得狀態碼
@@ -89,12 +88,18 @@ namespace AspNet5Template.Extensions.AspNet{
                         //檢查是否存在指定的對應
                         if (ErrorPages.ContainsKey(code)) {
                             //導引至指定錯誤頁面
-                            handler.Response.Redirect($"{handler.Request.Scheme}://{handler.Request.Host}/{ErrorPages[handler.Response.StatusCode]}");
+                            handler.Response.Redirect($"{handler.Request.PathBase}/{ErrorPages[handler.Response.StatusCode]}");
                             return;
                         }
                     });
                 });
-            });
+            };
+            
+            //狀態對應
+            app.UseStatusCodePages(ErrorHandler);
+
+            //狀態對應
+            app.UseExceptionHandler(ErrorHandler);
         }
     }
 }
