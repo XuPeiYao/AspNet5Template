@@ -85,7 +85,7 @@ namespace AspNet5Template.Extensions.AspNet{
                     return Task.Run(() => {
                         int code = handler.Response.StatusCode;
                         if (ErrorPages.ContainsKey(code)) {//檢查是否存在指定的對應
-                            handler.Response.Redirect($"{handler.Request.Protocol}://{handler.Request.Host}/{ErrorPages[handler.Response.StatusCode]}");
+                            handler.Response.Redirect($"{handler.Request.Scheme}://{handler.Request.Host}/{ErrorPages[handler.Response.StatusCode]}");
                             return;
                         }
                     });
