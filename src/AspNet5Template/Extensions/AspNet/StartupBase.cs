@@ -83,8 +83,12 @@ namespace AspNet5Template.Extensions.AspNet{
             app.UseStatusCodePages(builder => {
                 builder.Run(handler => {
                     return Task.Run(() => {
+                        //取得狀態碼
                         int code = handler.Response.StatusCode;
-                        if (ErrorPages.ContainsKey(code)) {//檢查是否存在指定的對應
+
+                        //檢查是否存在指定的對應
+                        if (ErrorPages.ContainsKey(code)) {
+                            //導引至指定錯誤頁面
                             handler.Response.Redirect($"{handler.Request.Scheme}://{handler.Request.Host}/{ErrorPages[handler.Response.StatusCode]}");
                             return;
                         }

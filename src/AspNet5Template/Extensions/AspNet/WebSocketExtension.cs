@@ -8,6 +8,13 @@ using System.Threading.Tasks;
 
 namespace AspNet5Template.Extensions.AspNet{
     public static class WebSocketExtension{
+        /// <summary>
+        /// 非同步接收文字
+        /// </summary>
+        /// <param name="Obj">擴充物件</param>
+        /// <param name="Token">散佈通知，表示不應取消作業</param>
+        /// <param name="BufferSize">緩衝區大小</param>
+        /// <returns></returns>
         public static async Task<Tuple<string, WebSocketReceiveResult>> ReceiveTextAsync(this WebSocket Obj, CancellationToken Token, int BufferSize = 1024 * 4) {
             byte[] Buffer = new byte[BufferSize];
             WebSocketReceiveResult ReceiveResult = await Obj.ReceiveAsync(new ArraySegment<byte>(Buffer), Token);
@@ -18,6 +25,12 @@ namespace AspNet5Template.Extensions.AspNet{
             return new Tuple<string, WebSocketReceiveResult>(Result, ReceiveResult);
         }
 
+        /// <summary>
+        /// 非同步送出文字
+        /// </summary>
+        /// <param name="Obj">擴充物件</param>
+        /// <param name="Data">文字內容</param>
+        /// <returns></returns>
         public static async Task SendTextAsync(this WebSocket Obj, string Data) {
             await Obj.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(Data)), WebSocketMessageType.Text, true, CancellationToken.None);
         }

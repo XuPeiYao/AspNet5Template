@@ -68,7 +68,7 @@ namespace AspNet5Template{
             app.UseStaticFiles();
             #endregion
 
-            //使用MVC服務，並且載入路由設定
+            //使用MVC服務，並且載入預設路由設定
             app.UseMvc(ConfigureMvcRoute);
 
             /*WebSocket設定範例

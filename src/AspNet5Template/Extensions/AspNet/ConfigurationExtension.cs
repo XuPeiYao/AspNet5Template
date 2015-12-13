@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace AspNet5Template.Extensions.AspNet{
     public static class ConfigurationExtension{
+        /// <summary>
+        /// 將IConfiguration物件轉換為dynamic物件
+        /// </summary>
+        /// <param name="configureation"></param>
+        /// <returns></returns>
         public static object ToDynamicObject(this IConfiguration configureation){
             if (configureation == null) return null;
 

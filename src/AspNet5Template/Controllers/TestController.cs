@@ -5,29 +5,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 
 namespace AspNet5Template.Controllers{
-    //[Route("api/[controller]")]
+    //[Route("api/[controller]")]可使用RouteAttribute方式設定該控制器路由，此方式優先於MapRoute
     public class TestController : Controller{
-        
-
         // GET: api/values
-        [HttpGet]
+        //[HttpGet] 此為REST設定，僅在RouteAttribute作用時作用
         public IEnumerable<string> Get(){
-            var t = 1 / (int)Math.Pow(0,2);
             return new string[] { "value1", "value2" };
         }
 
         // POST api/values
-        [HttpPost]
+        //[HttpPost] 此為REST設定，僅在RouteAttribute作用時作用
         public void Post([FromBody]string value){
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
+        //[HttpPut("{id}")] 此為REST設定，僅在RouteAttribute作用時作用
         public void Put(int id, [FromBody]string value){
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
+        //[HttpDelete("{id}")] 此為REST設定，僅在RouteAttribute作用時作用
         public void Delete(int id){
         }
     }
