@@ -12,6 +12,7 @@ namespace AspNet5Template.Controllers{
         //WebSocket集合，用以儲存目前線上所有使用者。
         public static List<WebSocket> WebSocketList = new List<WebSocket>();
 
+        //建構子，設定Request路徑
         public TestChatHanlder() : base(RequestPath: "/api/chat") {
             this.OnConnected += TestChatHanlder_OnConnected;
             this.OnDisconnected += TestChatHanlder_OnDisconnected;
@@ -30,8 +31,8 @@ namespace AspNet5Template.Controllers{
 
         private void TestChatHanlder_OnReceive(WebSocket Socket, WebSocketMessageType Type, byte[] ReceiveMessage) {
             //並行廣播給所有使用者，也可以轉發給指定使用者
-            Parallel.ForEach(WebSocketList, socket => {
-                socket.SendAsync(new ArraySegment<byte>(ReceiveMessage), Type, true, CancellationToken.None);
+            Parallel.ForEach(WebSocketList,async socket => {
+                await socket.SendAsync(new ArraySegment<byte>(ReceiveMessage), Type, true, CancellationToken.None);
             });
         }
                 
