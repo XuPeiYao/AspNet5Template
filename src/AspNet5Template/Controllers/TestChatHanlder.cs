@@ -14,6 +14,7 @@ namespace AspNet5Template.Controllers{
 
         //建構子，設定Request路徑
         public TestChatHanlder() : base(RequestPath: "/api/chat") {
+            //加入事件
             this.OnConnected += TestChatHanlder_OnConnected;
             this.OnDisconnected += TestChatHanlder_OnDisconnected;
             this.OnReceive += TestChatHanlder_OnReceive;
