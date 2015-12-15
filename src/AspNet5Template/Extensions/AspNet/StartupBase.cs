@@ -6,6 +6,7 @@ using Microsoft.AspNet.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -87,9 +88,14 @@ namespace AspNet5Template.Extensions.AspNet{
 
                         //檢查是否存在指定的對應
                         if (ErrorPages.ContainsKey(code)) {
-                            //導引至指定錯誤頁面
-                            handler.Response.Redirect($"{handler.Request.PathBase}/{ErrorPages[handler.Response.StatusCode]}");
+                            //寫出錯誤頁面內容
+                            byte[] Content = File.ReadAllBytes(env.MapPath(ErrorPages[handler.Response.StatusCode]));
+                            handler.Response.ContentType = "text/html";
+                            handler.Response.Body.WriteAsync(Content , 0, Content.Length);
                             return;
+
+                            //以跳轉的方式到錯誤頁面
+                            //handler.Response.Redirect($"{handler.Request.PathBase}/{ErrorPages[handler.Response.StatusCode]}");
                         }
                     });
                 });

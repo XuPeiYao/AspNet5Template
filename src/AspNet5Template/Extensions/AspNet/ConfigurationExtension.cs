@@ -37,7 +37,6 @@ namespace AspNet5Template.Extensions.AspNet{
                     }else {
                         setting[attr.Key] = attr.Value?.Length > 0 ? attr.Value : null;
                     }
-
                 }
             }
             return result;

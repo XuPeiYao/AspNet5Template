@@ -34,5 +34,18 @@ namespace AspNet5Template.Extensions.AspNet{
         public static async Task SendTextAsync(this WebSocket Obj, string Data) {
             await Obj.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(Data)), WebSocketMessageType.Text, true, CancellationToken.None);
         }
+
+        /// <summary>
+        /// 透過WebSocket以非同步的方式傳送資料
+        /// </summary>
+        /// <param name="Obj">擴充物件</param>
+        /// <param name="buffer">要透過連線傳送的緩衝區</param>
+        /// <param name="messageType">表示應用程式正在傳送二進位或文字訊息</param>
+        /// <param name="endOfMessage">指示「緩衝區」中的資料是否為訊息的最後一部分</param>
+        /// <param name="cancellationToken">散佈通知的語彙基元，該通知表示不應取消作業</param>
+        /// <returns></returns>
+        public static async Task SendAsync(this WebSocket Obj, byte[] buffer, WebSocketMessageType messageType, bool endOfMessage, CancellationToken cancellationToken) {
+            await Obj.SendAsync(new ArraySegment<byte>(buffer), messageType, endOfMessage, cancellationToken);
+        }
     }
 }

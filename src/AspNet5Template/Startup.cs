@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using AspNet5Template.Extensions.AspNet;
 using Microsoft.AspNet.Routing;
 using Microsoft.AspNet.StaticFiles;
+using AspNet5Template.Controllers;
 
 namespace AspNet5Template{
     public sealed class Startup : StartupBase{
@@ -70,13 +71,9 @@ namespace AspNet5Template{
 
             //使用MVC服務，並且載入預設路由設定
             app.UseMvc(ConfigureMvcRoute);
-                        
-            /*WebSocket設定範例
-            app.UseWebSockets();
-            app.Map("/api/chatroom/socket", WebSocketApi => {
-                app.Use(ChatRoomHandler.Start);
-            });
-            */
+
+            //WebSocket設定
+            app.UseWebSockets<TestChatHanlder>();
         }
                         
         //Web Application程式進入點
