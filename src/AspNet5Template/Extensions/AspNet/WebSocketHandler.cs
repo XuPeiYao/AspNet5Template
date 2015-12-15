@@ -120,7 +120,7 @@ namespace AspNet5Template.Extensions.AspNet{
                 OnReceive?.Invoke(Socket,ReceiveResult.MessageType,ReceiveData.ToArray());
             };
 
-            OnDisconnected.Invoke(Context, Socket);
+            OnDisconnected?.Invoke(Context, Socket);
         }        
     }
 }
