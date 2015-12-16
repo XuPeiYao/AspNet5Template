@@ -37,6 +37,9 @@ namespace AspNet5Template{
 
             //加入MVC服務
             services.AddMvc();
+            
+
+            services.AddTransient<AppExceptionFilterAttribute>();
         }
 
         //此方法在執行階段被呼叫，使用此方法設定HTTP Request流程
