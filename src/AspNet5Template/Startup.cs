@@ -35,10 +35,16 @@ namespace AspNet5Template{
             //加入Application Insights框架服務
             services.AddApplicationInsightsTelemetry(Configuration);
 
+            //加入快取
+            services.AddCaching();
+
+            //加入Session
+            services.AddSession();
+
             //加入MVC服務
             services.AddMvc();
             
-
+            //加入Exception過濾器
             services.AddTransient<AppExceptionFilterAttribute>();
         }
 
@@ -72,9 +78,12 @@ namespace AspNet5Template{
             app.UseStaticFiles();
             #endregion
 
+            //使用Session
+            app.UseSession();
+
             //使用MVC服務，並且載入預設路由設定
             app.UseMvc(ConfigureMvcRoute);
-
+            
             //WebSocket設定
             app.UseWebSockets<TestChatHanlder>();
         }

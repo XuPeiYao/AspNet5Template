@@ -30,5 +30,11 @@ namespace AspNet5Template.Controllers{
         //[HttpDelete("{id}")] 此為REST設定，僅在RouteAttribute作用時作用
         public void Delete(int id){
         }
+
+        public async Task<JsonResult> Test() {
+            //寫入Session
+            this.HttpContext.Session.Set("test", "Hello World!");
+            return await Task.FromResult(new JsonResult(null) { StatusCode  = 404 });
+        }
     }
 }
