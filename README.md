@@ -1,7 +1,7 @@
 ﻿ASP.NET 5 & MVC 6 專案模板
 ---
 ### 說明
-這個專案範本是提供一種應用在Visual Studio建立ASP.NET 5應用程式的專案模板。
+這個專案範本是提供一種應用在Visual Studio建立ASP.NET 5應用程式的中文專案模板。
 
 您可以使用開啟本專案並且透過Visual Studio中的「檔案(F)/匯出範本(E)」來匯出成為範例模板。
 
