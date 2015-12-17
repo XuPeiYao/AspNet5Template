@@ -11,7 +11,7 @@ namespace AspNet5Template.Extensions.AspNet{
         /// <summary>
         /// 非同步接收文字
         /// </summary>
-        /// <param name="Obj">擴充物件</param>
+        /// <param name="Obj">擴充對象</param>
         /// <param name="Token">散佈通知，表示不應取消作業</param>
         /// <param name="BufferSize">緩衝區大小</param>
         /// <returns></returns>
@@ -28,7 +28,7 @@ namespace AspNet5Template.Extensions.AspNet{
         /// <summary>
         /// 非同步送出文字
         /// </summary>
-        /// <param name="Obj">擴充物件</param>
+        /// <param name="Obj">擴充對象</param>
         /// <param name="Data">文字內容</param>
         /// <returns></returns>
         public static async Task SendTextAsync(this WebSocket Obj, string Data) {
@@ -38,7 +38,7 @@ namespace AspNet5Template.Extensions.AspNet{
         /// <summary>
         /// 透過WebSocket以非同步的方式傳送資料
         /// </summary>
-        /// <param name="Obj">擴充物件</param>
+        /// <param name="Obj">擴充對象</param>
         /// <param name="buffer">要透過連線傳送的緩衝區</param>
         /// <param name="messageType">表示應用程式正在傳送二進位或文字訊息</param>
         /// <param name="endOfMessage">指示「緩衝區」中的資料是否為訊息的最後一部分</param>

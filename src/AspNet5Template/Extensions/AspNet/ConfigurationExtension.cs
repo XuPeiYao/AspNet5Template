@@ -10,7 +10,7 @@ namespace AspNet5Template.Extensions.AspNet{
         /// <summary>
         /// 將IConfiguration物件轉換為dynamic物件
         /// </summary>
-        /// <param name="configureation"></param>
+        /// <param name="configureation">擴充對象</param>
         /// <returns></returns>
         public static object ToDynamicObject(this IConfiguration configureation){
             if (configureation == null) return null;
