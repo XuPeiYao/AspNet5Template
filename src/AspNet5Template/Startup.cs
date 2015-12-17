@@ -11,6 +11,8 @@ using AspNet5Template.Extensions.AspNet;
 using Microsoft.AspNet.Routing;
 using Microsoft.AspNet.StaticFiles;
 using AspNet5Template.Controllers;
+using AspNet5Template.Models;
+using Microsoft.Data.Entity;
 
 namespace AspNet5Template{
     public sealed class Startup : StartupBase{
@@ -34,6 +36,12 @@ namespace AspNet5Template{
         public void ConfigureServices(IServiceCollection services){
             //加入Application Insights框架服務
             services.AddApplicationInsightsTelemetry(Configuration);
+
+            //EF7
+            var connection = @"Server=(localdb)\mssqllocaldb;Database=Test;Trusted_Connection=True;";
+            services.AddEntityFramework()
+                .AddSqlServer()
+                .AddDbContext<BloggingContext>(options => options.UseSqlServer(connection));
 
             //加入快取
             services.AddCaching();
@@ -77,7 +85,7 @@ namespace AspNet5Template{
             //使用靜態檔案
             app.UseStaticFiles();
             #endregion
-
+            
             //使用Session
             app.UseSession();
 

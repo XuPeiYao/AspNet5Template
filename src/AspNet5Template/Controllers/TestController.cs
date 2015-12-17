@@ -4,11 +4,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using AspNet5Template.Extensions.AspNet;
+using AspNet5Template.Models;
+using Microsoft.Data.Entity;
+using AspNet5Template.Extensions.EntityFramework;
 
 namespace AspNet5Template.Controllers{
     //[Route("api/[controller]")]可使用RouteAttribute方式設定該控制器路由，此方式優先於MapRoute
     [ServiceFilter(typeof(AppExceptionFilterAttribute))]//例外過濾器
     public class TestController : Controller {
+        private BloggingContext db;
+
+        public TestController(BloggingContext database) {
+            db = database;
+        }
+
+
         // GET: api/values
         //[HttpGet] 此為REST設定，僅在RouteAttribute作用時作用
         public IEnumerable<string> Get(){
@@ -34,7 +44,16 @@ namespace AspNet5Template.Controllers{
         public async Task<JsonResult> Test() {
             //寫入Session
             this.HttpContext.Session.Set("test", "Hello World!");
-            return await Task.FromResult(new JsonResult(null) { StatusCode  = 404 });
+
+            //查詢資料庫內容
+            var result = (from t in db.Blog select t)//主查詢
+                .Include(//此方法呼叫後EF7送出的SQL指令返回資料即包含指定屬性資料或子查詢結果
+                    t => t.Post
+                ).ThenInclude(//下層子屬性
+                    post => post.Author
+                );//EF7目前只支援預先加載不支援延遲加載以至於如果要存取關聯的實體必須使用Include與ThenInclude
+            
+            return await Task.FromResult(new JsonResult(result) { StatusCode  = 404 });
         }
     }
 }

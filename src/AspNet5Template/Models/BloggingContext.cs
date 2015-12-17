@@ -11,16 +11,23 @@ namespace AspNet5Template.Models{
                 entity.HasKey(blog => blog.BlogId);
                 entity.Property(e => e.Url).IsRequired();
             });
-
+            
             modelBuilder.Entity<Post>(entity => {
                 entity.HasKey(post => post.PostId);
                 entity.Property(post => post.Title);
                 entity.Property(post => post.Content);
                 entity.HasOne(post => post.Blog).WithMany(blog => blog.Post).HasForeignKey(post => post.BlogId);
+                entity.HasOne(post => post.Author).WithMany(author => author.Post).HasForeignKey(post => post.AuthorId);
+            });
+
+            modelBuilder.Entity<Author>(entity => {
+                entity.HasKey(author => author.AuthorId);
+                entity.Property(author => author.Name);
             });
         }
 
         public virtual DbSet<Blog> Blog { get; set; }
         public virtual DbSet<Post> Post { get; set; }
+        public virtual DbSet<Author> Authore { get; set; }
     }
 }
