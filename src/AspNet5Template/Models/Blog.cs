@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AspNet5Template.Extensions.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace AspNet5Template.Models {
         public int BlogId { get; set; }
         public string Url { get; set; }
 
+        [LazyLoad]
         public virtual ICollection<Post> Post { get; set; }
     }
 }

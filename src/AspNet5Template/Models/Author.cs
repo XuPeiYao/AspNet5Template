@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using AspNet5Template.Extensions.EntityFramework;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace AspNet5Template.Models{
         public string Name { get; set; }
 
         [JsonIgnore]
+        [LazyLoad]
         public virtual ICollection<Post> Post { get; set; }
     }
 }
