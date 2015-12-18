@@ -46,12 +46,12 @@ namespace AspNet5Template.Controllers{
             this.HttpContext.Session.Set("test", "Hello World!");
 
             //查詢資料庫內容
-            var result = (from t in db.Blog select t)//主查詢
-                .Include(//此方法呼叫後EF7送出的SQL指令返回資料即包含指定屬性資料或子查詢結果
+            var result = (from t in db.Blog select t).LazyLoad();//主查詢
+                /*.Include(//此方法呼叫後EF7送出的SQL指令返回資料即包含指定屬性資料或子查詢結果
                     t => t.Post
                 ).ThenInclude(//下層子屬性
                     post => post.Author
-                );//EF7目前只支援預先加載不支援延遲加載以至於如果要存取關聯的實體必須使用Include與ThenInclude
+                );*///EF7目前只支援預先加載不支援延遲加載以至於如果要存取關聯的實體必須使用Include與ThenInclude
             
             return await Task.FromResult(new JsonResult(result) { StatusCode  = 404 });
         }

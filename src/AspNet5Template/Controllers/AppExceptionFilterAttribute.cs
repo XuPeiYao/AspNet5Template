@@ -15,7 +15,8 @@ namespace AspNet5Template.Controllers{
             context.Result = new JsonResult(new {
                 Title = "Error",
                 Controller = ControllerType.Name,
-                Method = context.ActionDescriptor.Name
+                Method = context.ActionDescriptor.Name,
+                Message = context.Exception.ToString()
             });
             
             base.OnException(context);
