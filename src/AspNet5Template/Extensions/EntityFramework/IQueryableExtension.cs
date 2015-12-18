@@ -67,7 +67,7 @@ namespace AspNet5Template.Extensions.EntityFramework{
                 #endregion
 
                 List<Type> typeList2 = new List<Type>(typeList.ToArray());
-                typeList2.Add(type);
+                typeList2.Add(type);//Function Return Type
 
                 result = result.ThenInclude(func).ThenLazyLoad(func,typeList2);//.ThenLazyLoad<TEntity>(func);//解決單層讀取問題
             }

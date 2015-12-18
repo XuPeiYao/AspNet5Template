@@ -28,6 +28,6 @@ namespace AspNet5Template.Models{
 
         public virtual DbSet<Blog> Blog { get; set; }
         public virtual DbSet<Post> Post { get; set; }
-        public virtual DbSet<Author> Authore { get; set; }
+        public virtual DbSet<Author> Author { get; set; }
     }
 }

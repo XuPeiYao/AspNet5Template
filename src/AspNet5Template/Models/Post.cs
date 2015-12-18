@@ -14,7 +14,7 @@ namespace AspNet5Template.Models {
         public string Title { get; set; }
 
         [JsonIgnore]
-        [LazyLoad]
+        //[LazyLoad]
         public Blog Blog { get; set; }
 
         [LazyLoad]
