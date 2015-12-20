@@ -38,7 +38,7 @@ namespace AspNet5Template{
             services.AddApplicationInsightsTelemetry(Configuration);
 
             //EF7
-            var connection = @"Server=(localdb)\ProjectsV12;Database=Test;Trusted_Connection=True;";
+            var connection = Configuration["ConnectionString"];
             services.AddEntityFramework()
                 .AddSqlServer()
                 .AddDbContext<BloggingContext>(options => options.UseSqlServer(connection));
@@ -58,7 +58,7 @@ namespace AspNet5Template{
 
         //此方法在執行階段被呼叫，使用此方法設定HTTP Request流程
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory){
-            //使用IIS平台處理器
+            //使用IIS平台處理
             app.UseIISPlatformHandler();
 
             #region Development Configure

@@ -9,6 +9,8 @@ using Microsoft.Data.Entity;
 using AspNet5Template.Extensions.EntityFramework;
 using Newtonsoft.Json;
 using AspNet5Template.Extensions.Reflection;
+using System.Collections;
+using System.Linq.Expressions;
 
 namespace AspNet5Template.Controllers{
     //[Route("api/[controller]")]可使用RouteAttribute方式設定該控制器路由，此方式優先於MapRoute
@@ -44,22 +46,26 @@ namespace AspNet5Template.Controllers{
         }
 
         public async Task<JsonResult> Test() {
-            var v = this.GetMemberInfo(obj => obj.db.Post);
-
+            
             //寫入Session
             this.HttpContext.Session.Set("test", "Hello World!");
 
+            var g = from t in db.Blog
+                    select t;
+            
             //查詢資料庫內容
             var result1 = (from t in db.Blog select t).FullInclude(1);//EF7目前只支援預先加載不支援延遲加載以至於如果要存取關聯的實體必須使用Include與ThenInclude
 
-            var result2 = (from t in db.Post select t).FullInclude();//使用這個方法時必須注意參考迴圈
+            var result2 = (from t in db.Post select t).FullInclude();//使用這個方法時必須注意參考迴圈以防無窮迴圈
             
             var result = new {
                 a = result1,
                 b = result2
             };
-            
-            return await Task.FromResult(new JsonResult(result) { StatusCode  = 404 });
+
+            return await Task.FromResult(new JsonResult(result) { StatusCode  = 200 });
         }
+
+        
     }
 }

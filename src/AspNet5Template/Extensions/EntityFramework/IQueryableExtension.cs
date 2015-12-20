@@ -19,7 +19,7 @@ namespace AspNet5Template.Extensions.EntityFramework{
         /// <param name="source">擴充對象</param>
         /// <param name="Level">目標階層數量(預設僅目前物件屬性)</param>
         /// <returns></returns>
-        public static IQueryable FullInclude<TEntity>(this IQueryable<TEntity> source,int Level = 0) where TEntity : class {
+        public static IQueryable<TEntity> FullInclude<TEntity>(this IQueryable<TEntity> source,int Level = 0) where TEntity : class {
             Type GenericType = source.GetType().GetGenericArguments()?[0];
 
             PropertyInfo[] Properties = GenericType.GetProperties();
@@ -27,7 +27,7 @@ namespace AspNet5Template.Extensions.EntityFramework{
             IQueryable<TEntity> result = source;
 
             foreach (var Property in Properties) {
-                if (Property.GetCustomAttribute<EagerLoadingAttribute>() == null) continue;
+                if (Property.GetCustomAttribute<IncludeAttribute>() == null) continue;
 
                 #region 建構Lambda
                 var header = Expression.Parameter(GenericType, "item");
@@ -66,7 +66,7 @@ namespace AspNet5Template.Extensions.EntityFramework{
             PropertyInfo[] Properties = type.GetProperties();
 
             foreach (var Property in Properties) {
-                if (Property.GetCustomAttribute<EagerLoadingAttribute>() == null) continue;
+                if (Property.GetCustomAttribute<IncludeAttribute>() == null) continue;
                 if (Property.PropertyType == source.ElementType) continue;
 
                 #region 建構Lambda
@@ -88,5 +88,6 @@ namespace AspNet5Template.Extensions.EntityFramework{
             }
             return result;
         }
+        
     }
 }

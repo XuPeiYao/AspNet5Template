@@ -6,7 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace AspNet5Template.Models {
-    public class Post {
+    public class Post{
+        
         public int PostId { get; set; }
         public int BlogId { get; set; }
         public int AuthorId { get; set; }
@@ -14,10 +15,9 @@ namespace AspNet5Template.Models {
         public string Title { get; set; }
 
         [JsonIgnore]
-        //[LazyLoad]
         public Blog Blog { get; set; }
 
-        [LazyLoad]
+        [Include]
         public Author Author { get; set; }
     }
 }

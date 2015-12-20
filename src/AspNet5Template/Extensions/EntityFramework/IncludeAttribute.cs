@@ -5,6 +5,6 @@ using System.Threading.Tasks;
 
 namespace AspNet5Template.Extensions.EntityFramework{
     [AttributeUsage(AttributeTargets.Property)]
-    public class  EagerLoadingAttribute : Attribute{
+    public class IncludeAttribute : Attribute{
     }
 }
