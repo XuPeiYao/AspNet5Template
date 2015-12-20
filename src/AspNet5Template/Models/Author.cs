@@ -11,7 +11,7 @@ namespace AspNet5Template.Models{
         public string Name { get; set; }
 
         [JsonIgnore]
-        [LazyLoad]
+        [EagerLoading]
         public virtual ICollection<Post> Post { get; set; }
     }
 }

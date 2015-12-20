@@ -38,7 +38,7 @@ namespace AspNet5Template{
             services.AddApplicationInsightsTelemetry(Configuration);
 
             //EF7
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=Test;Trusted_Connection=True;";
+            var connection = @"Server=(localdb)\ProjectsV12;Database=Test;Trusted_Connection=True;";
             services.AddEntityFramework()
                 .AddSqlServer()
                 .AddDbContext<BloggingContext>(options => options.UseSqlServer(connection));

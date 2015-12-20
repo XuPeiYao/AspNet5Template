@@ -1717,6 +1717,15 @@
           "lib/net45/_._": {}
         }
       },
+      "System.Linq.Expressions/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
       "System.Net.Http/4.0.1-beta-23516": {
         "type": "package",
         "frameworkAssemblies": [
@@ -6004,6 +6013,15 @@
           "lib/net45/Remotion.Linq.dll": {}
         }
       },
+      "runtime.any.System.Linq.Expressions/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/dotnet/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
       "runtime.win7.System.Net.Http/4.0.1-beta-23516": {
         "type": "package",
         "compile": {
@@ -6089,6 +6107,15 @@
         }
       },
       "System.Linq/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Linq.Expressions/4.0.11-beta-23516": {
         "type": "package",
         "compile": {
           "ref/net45/_._": {}
@@ -7865,6 +7892,15 @@
           "lib/net45/Remotion.Linq.dll": {}
         }
       },
+      "runtime.any.System.Linq.Expressions/4.0.11-beta-23516": {
+        "type": "package",
+        "compile": {
+          "ref/dotnet/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
       "runtime.win7.System.Net.Http/4.0.1-beta-23516": {
         "type": "package",
         "compile": {
@@ -7950,6 +7986,15 @@
         }
       },
       "System.Linq/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "System.Linq.Expressions/4.0.11-beta-23516": {
         "type": "package",
         "compile": {
           "ref/net45/_._": {}
@@ -17556,7 +17601,7 @@
     "System.Net.Sockets/4.1.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "9wupz6i8AONzdzaLglcYImU25ivdcKmBXnf9GxE0eS1QqRGWQcWkKyv4dyxMc9E0gt4UuTIktn2FLjrz8ir6sw==",
+      "sha512": "ZB+ZE/Bo52Zr38mIX4Wb1mrq9zHCbl7Oz9iv8IL3dQ2RZqMdUZpPI/PLTRI+/BgUNnycK53VY8kp8QGJIzqTiQ==",
       "files": [
         "lib/DNXCore50/System.Net.Sockets.dll",
         "lib/MonoAndroid10/_._",
@@ -19617,6 +19662,7 @@
       "System.Reflection >= 4.1.0-beta-23516"
     ],
     "DNX,Version=v4.5.1": [
+      "System.Linq.Expressions >= 4.0.11-beta-23516",
       "System.Net.Http >= 4.0.1-beta-23516"
     ],
     "DNXCore,Version=v5.0": []
