@@ -6,6 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace AspNet5Template.Extensions.AspNet{
+    /// <summary>
+    /// 針對<see cref="IApplicationBuilder"/>類型的擴充方法
+    /// </summary>
     public static class IApplicationBuilderExtension{
         /// <summary>
         /// 將WebSocket服務加入服務空間，使用指定的WebSocket處理容器

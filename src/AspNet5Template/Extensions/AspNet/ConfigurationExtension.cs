@@ -6,12 +6,15 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace AspNet5Template.Extensions.AspNet{
+    /// <summary>
+    /// 針對ASP.NET 5中的<see cref="IConfiguration"/>類型的擴充
+    /// </summary>
     public static class ConfigurationExtension{
         /// <summary>
         /// 將IConfiguration物件轉換為dynamic物件
         /// </summary>
         /// <param name="configureation">擴充對象</param>
-        /// <returns></returns>
+        /// <returns>動態物件</returns>
         public static object ToDynamicObject(this IConfiguration configureation){
             if (configureation == null) return null;
 

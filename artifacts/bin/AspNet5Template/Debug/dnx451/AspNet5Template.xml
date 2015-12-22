@@ -1,0 +1,373 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNet5Template</name>
+    </assembly>
+    <members>
+        <member name="T:AspNet5Template.Extensions.AspNet.ConfigurationExtension">
+            <summary>
+            針對ASP.NET 5中的<see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/>類型的擴充
+            </summary>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.ConfigurationExtension.ToDynamicObject(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            將IConfiguration物件轉換為dynamic物件
+            </summary>
+            <param name="configureation">擴充對象</param>
+            <returns>動態物件</returns>
+        </member>
+        <member name="T:AspNet5Template.Extensions.AspNet.ExceptionContextExtension">
+            <summary>
+            針對ASP.NET 5中的<see cref="T:Microsoft.AspNet.Mvc.Filters.ExceptionContext"/>類型的擴充
+            </summary>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.ExceptionContextExtension.GetControllerType(Microsoft.AspNet.Mvc.Filters.ExceptionContext)">
+            <summary>
+            取得例外發生的控制器型別
+            </summary>
+            <param name="obj">擴充對象</param>
+            <returns>控制器型別</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.ExceptionContextExtension.GetActionMethodInfo(Microsoft.AspNet.Mvc.Filters.ExceptionContext)">
+            <summary>
+            取得發生例外的方法資訊
+            </summary>
+            <param name="obj">擴充對象</param>
+            <returns>方法資訊</returns>
+        </member>
+        <member name="T:AspNet5Template.Extensions.AspNet.HttpClientExtension">
+            <summary>
+            針對<see cref="T:System.Net.Http.HttpClient"/>類型的擴充方法
+            </summary>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.HttpClientExtension.GetJsonAsync(System.Net.Http.HttpClient,System.String)">
+            <summary>
+            將 GET 要求傳送至指定的 URI，並透過非同步作業，以JToken形式傳回回應內容
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="requestUri">要求被傳送到的 URI</param>
+            <returns>回應內容</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.HttpClientExtension.GetJsonAsync(System.Net.Http.HttpClient,System.Uri)">
+            <summary>
+            將 GET 要求傳送至指定的 URI，並透過非同步作業，以JToken形式傳回回應內容
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="requestUri">要求被傳送到的 URI</param>
+            <returns>回應內容</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.HttpClientExtension.PostJsonAsync(System.Net.Http.HttpClient,System.String,System.Net.Http.HttpContent,System.Threading.CancellationToken)">
+            <summary>
+            以非同步作業的方式，傳送 POST 要求和取消語彙基元
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="requestUri">要求被傳送到的 URI</param>
+            <param name="content">傳送至伺服器的 HTTP 要求內容</param>
+            <param name="cancellationToken">取消語彙基元，可由其他物件或執行緒使用以接收的取消通知</param>
+            <returns>回應內容</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.HttpClientExtension.PostJsonAsync(System.Net.Http.HttpClient,System.Uri,System.Net.Http.HttpContent,System.Threading.CancellationToken)">
+            <summary>
+            以非同步作業的方式，傳送 POST 要求和取消語彙基元
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="requestUri">要求被傳送到的 URI</param>
+            <param name="content">傳送至伺服器的 HTTP 要求內容</param>
+            <param name="cancellationToken">取消語彙基元，可由其他物件或執行緒使用以接收的取消通知</param>
+            <returns>回應內容</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.HttpClientExtension.PostJsonAsync(System.Net.Http.HttpClient,System.String,System.Net.Http.HttpContent)">
+            <summary>
+            以非同步作業的方式，傳送 POST 要求和取消語彙基元
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="requestUri">要求被傳送到的 URI</param>
+            <param name="content">傳送至伺服器的 HTTP 要求內容</param>
+            <returns>回應內容</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.HttpClientExtension.PostJsonAsync(System.Net.Http.HttpClient,System.Uri,System.Net.Http.HttpContent)">
+            <summary>
+            以非同步作業的方式，傳送 POST 要求和取消語彙基元
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="requestUri">要求被傳送到的 URI</param>
+            <param name="content">傳送至伺服器的 HTTP 要求內容</param>
+            <returns>回應內容</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.HttpClientExtension.DeleteJsonAsync(System.Net.Http.HttpClient,System.String,System.Threading.CancellationToken)">
+            <summary>
+            以非同步作業的方式，傳送 DELETE 要求和取消語彙基元
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="requestUri">要求被傳送到的 URI</param>
+            <param name="cancellationToken">取消語彙基元，可由其他物件或執行緒使用以接收的取消通知</param>
+            <returns>回應內容</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.HttpClientExtension.PostJsonAsync(System.Net.Http.HttpClient,System.Uri,System.Threading.CancellationToken)">
+            <summary>
+            以非同步作業的方式，傳送 DELETE 要求和取消語彙基元
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="requestUri">要求被傳送到的 URI</param>
+            <param name="cancellationToken">取消語彙基元，可由其他物件或執行緒使用以接收的取消通知</param>
+            <returns>回應內容</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.HttpClientExtension.DeleteJsonAsync(System.Net.Http.HttpClient,System.String)">
+            <summary>
+            以非同步作業的方式，傳送 DELETE 要求和取消語彙基元
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="requestUri">要求被傳送到的 URI</param>
+            <returns>回應內容</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.HttpClientExtension.PostJsonAsync(System.Net.Http.HttpClient,System.Uri)">
+            <summary>
+            以非同步作業的方式，傳送 DELETE 要求和取消語彙基元
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="requestUri">要求被傳送到的 URI</param>
+            <returns>回應內容</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.HttpClientExtension.PutJsonAsync(System.Net.Http.HttpClient,System.String,System.Net.Http.HttpContent,System.Threading.CancellationToken)">
+            <summary>
+            以非同步作業的方式，傳送 PUT 要求和取消語彙基元
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="requestUri">要求被傳送到的 URI</param>
+            <param name="content">傳送至伺服器的 HTTP 要求內容</param>
+            <param name="cancellationToken">取消語彙基元，可由其他物件或執行緒使用以接收的取消通知</param>
+            <returns>回應內容</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.HttpClientExtension.PutJsonAsync(System.Net.Http.HttpClient,System.Uri,System.Net.Http.HttpContent,System.Threading.CancellationToken)">
+            <summary>
+            以非同步作業的方式，傳送 PUT 要求和取消語彙基元
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="requestUri">要求被傳送到的 URI</param>
+            <param name="content">傳送至伺服器的 HTTP 要求內容</param>
+            <param name="cancellationToken">取消語彙基元，可由其他物件或執行緒使用以接收的取消通知</param>
+            <returns>回應內容</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.HttpClientExtension.PutJsonAsync(System.Net.Http.HttpClient,System.String,System.Net.Http.HttpContent)">
+            <summary>
+            以非同步作業的方式，傳送 PUT 要求和取消語彙基元
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="requestUri">要求被傳送到的 URI</param>
+            <param name="content">傳送至伺服器的 HTTP 要求內容</param>
+            <returns>回應內容</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.HttpClientExtension.PutJsonAsync(System.Net.Http.HttpClient,System.Uri,System.Net.Http.HttpContent)">
+            <summary>
+            以非同步作業的方式，傳送 PUT 要求和取消語彙基元
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="requestUri">要求被傳送到的 URI</param>
+            <param name="content">傳送至伺服器的 HTTP 要求內容</param>
+            <returns>回應內容</returns>
+        </member>
+        <member name="T:AspNet5Template.Extensions.AspNet.IApplicationBuilderExtension">
+            <summary>
+            針對<see cref="T:Microsoft.AspNet.Builder.IApplicationBuilder"/>類型的擴充方法
+            </summary>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.IApplicationBuilderExtension.UseWebSockets``1(Microsoft.AspNet.Builder.IApplicationBuilder,Microsoft.AspNet.WebSockets.Server.WebSocketOptions)">
+            <summary>
+            將WebSocket服務加入服務空間，使用指定的WebSocket處理容器
+            </summary>
+            <typeparam name="Handler">處理容器型別，必須繼承自WebSocketHandler</typeparam>
+            <param name="builder">擴充對象</param>
+            <param name="options">WebSocket選項</param>
+            <returns></returns>
+        </member>
+        <member name="T:AspNet5Template.Extensions.AspNet.ISessionExtension">
+            <summary>
+            針對<see cref="T:Microsoft.AspNet.Http.Features.ISession"/>類型的擴充方法
+            </summary>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.ISessionExtension.Set(Microsoft.AspNet.Http.Features.ISession,System.String,System.String)">
+            <summary>
+            對指定Key寫入值
+            </summary>
+            <param name="obj">擴充對象</param>
+            <param name="key">主鍵</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.ISessionExtension.TryGetStringValue(Microsoft.AspNet.Http.Features.ISession,System.String,System.String@)">
+            <summary>
+            嘗試取得指定Key的值
+            </summary>
+            <param name="obj">擴充對象</param>
+            <param name="key">主鍵</param>
+            <param name="value">取得結果</param>
+            <returns>是否成功取得</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.ISessionExtension.Set(Microsoft.AspNet.Http.Features.ISession,System.String,Newtonsoft.Json.Linq.JToken)">
+            <summary>
+            對指定Key寫入值
+            </summary>
+            <param name="obj">擴充對象</param>
+            <param name="key">主鍵</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.ISessionExtension.TryGetJTokenValue(Microsoft.AspNet.Http.Features.ISession,System.String,Newtonsoft.Json.Linq.JToken@)">
+            <summary>
+            嘗試取得指定Key的值
+            </summary>
+            <param name="obj">擴充對象</param>
+            <param name="key">主鍵</param>
+            <param name="value">取得結果</param>
+            <returns>是否成功取得</returns>
+        </member>
+        <member name="T:AspNet5Template.Extensions.AspNet.StartupBase">
+            <summary>
+            啟動類別的基礎類型，用以簡化啟動流程與增進功能
+            </summary>
+        </member>
+        <member name="P:AspNet5Template.Extensions.AspNet.StartupBase.Configuration">
+            <summary>
+            應用程式配置
+            </summary>
+        </member>
+        <member name="P:AspNet5Template.Extensions.AspNet.StartupBase.ErrorPages">
+            <summary>
+            錯誤頁面與錯誤代碼對應
+            </summary>
+        </member>
+        <member name="T:AspNet5Template.Extensions.AspNet.WebSocketExtension">
+            <summary>
+            針對<see cref="T:System.Net.WebSockets.WebSocket"/>類型的擴充方法
+            </summary>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.WebSocketExtension.ReceiveTextAsync(System.Net.WebSockets.WebSocket,System.Threading.CancellationToken,System.Int32)">
+            <summary>
+            非同步接收文字
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="Token">散佈通知，表示不應取消作業</param>
+            <param name="BufferSize">緩衝區大小</param>
+            <returns>字串與原始結果</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.WebSocketExtension.SendTextAsync(System.Net.WebSockets.WebSocket,System.String)">
+            <summary>
+            非同步送出文字
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="Data">文字內容</param>
+            <returns>字串與原始結果</returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.WebSocketExtension.SendAsync(System.Net.WebSockets.WebSocket,System.Byte[],System.Net.WebSockets.WebSocketMessageType,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            透過WebSocket以非同步的方式傳送資料
+            </summary>
+            <param name="Obj">擴充對象</param>
+            <param name="buffer">要透過連線傳送的緩衝區</param>
+            <param name="messageType">表示應用程式正在傳送二進位或文字訊息</param>
+            <param name="endOfMessage">指示「緩衝區」中的資料是否為訊息的最後一部分</param>
+            <param name="cancellationToken">散佈通知的語彙基元，該通知表示不應取消作業</param>
+            <returns>字串與原始結果</returns>
+        </member>
+        <member name="T:AspNet5Template.Extensions.AspNet.WebSocketHandler">
+            <summary>
+            為<see cref="M:AspNet5Template.Extensions.AspNet.IApplicationBuilderExtension.UseWebSockets``1(Microsoft.AspNet.Builder.IApplicationBuilder,Microsoft.AspNet.WebSockets.Server.WebSocketOptions)"/>方法所參考的處理類型
+            </summary>
+        </member>
+        <member name="T:AspNet5Template.Extensions.AspNet.WebSocketHandler.WebSocketConnectionEvent">
+            <summary>
+            WebSocket連線狀態改變事件
+            </summary>
+            <param name="Context">Http通訊內容</param>
+            <param name="Socket">WebSocket物件</param>
+        </member>
+        <member name="T:AspNet5Template.Extensions.AspNet.WebSocketHandler.WebsocketReceiveEvent">
+            <summary>
+            WebSocket接收訊息事件
+            </summary>
+            <param name="Socket">WebSocket物件</param>
+            <param name="Type">訊息類型</param>
+            <param name="ReceiveMessage">接收到的訊息</param>
+        </member>
+        <member name="P:AspNet5Template.Extensions.AspNet.WebSocketHandler.RequestPath">
+            <summary>
+            表示Request路徑
+            </summary>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.WebSocketHandler.#ctor(System.String,System.String)">
+            <summary>
+            Handler建構式，您必須至少聲明Request路徑
+            </summary>
+            <param name="RequestPath">Request路徑</param>
+            <param name="SubProtocol">子通訊協定</param>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.WebSocketHandler.Start(Microsoft.AspNet.Http.HttpContext,System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Handler進入點
+            </summary>
+            <param name="Context">Http通訊內容</param>
+            <param name="Next">下一個連線工作</param>
+            <returns></returns>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.WebSocketHandler.AcceptConditions(Microsoft.AspNet.Http.HttpContext)">
+            <summary>
+            允許WebSocket連線之條件
+            </summary>
+            <param name="Context">Http通訊內容</param>
+            <returns></returns>
+        </member>
+        <member name="E:AspNet5Template.Extensions.AspNet.WebSocketHandler.OnConnected">
+            <summary>
+            當WebSocket開啟連線時
+            </summary>
+        </member>
+        <member name="E:AspNet5Template.Extensions.AspNet.WebSocketHandler.OnDisconnected">
+            <summary>
+            當WebSocket關閉連線時
+            </summary>
+        </member>
+        <member name="E:AspNet5Template.Extensions.AspNet.WebSocketHandler.OnReceive">
+            <summary>
+            當WebSocket接收到訊息
+            </summary>
+        </member>
+        <member name="M:AspNet5Template.Extensions.AspNet.WebSocketHandler.Listen(Microsoft.AspNet.Http.HttpContext,System.Net.WebSockets.WebSocket)">
+            <summary>
+            WebSocket監聽主程序
+            </summary>
+            <param name="Context">Http通訊內容</param>
+            <param name="Socket">WebSocket物件</param>
+        </member>
+        <member name="T:AspNet5Template.Extensions.EntityFramework.IncludeAttribute">
+            <summary>
+            標註EntityFramework中模型類別成員在呼叫<see cref="M:AspNet5Template.Extensions.EntityFramework.IQueryableExtension.FullInclude``1(System.Linq.IQueryable{``0},System.Int32)"/>時自動引入
+            </summary>
+        </member>
+        <member name="T:AspNet5Template.Extensions.EntityFramework.IQueryableExtension">
+            <summary>
+            針對EntityFramework的查詢結果的擴充方法
+            </summary>
+        </member>
+        <member name="M:AspNet5Template.Extensions.EntityFramework.IQueryableExtension.FullInclude``1(System.Linq.IQueryable{``0},System.Int32)">
+            <summary>
+            完整載入屬性
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="source">擴充對象</param>
+            <param name="Level">目標階層數量(預設僅目前物件屬性)</param>
+            <returns></returns>
+        </member>
+        <member name="T:AspNet5Template.Extensions.Reflection.MemberInfoExtension">
+            <summary>
+            針對類別成員取得方式的擴充方法
+            </summary>
+        </member>
+        <member name="M:AspNet5Template.Extensions.Reflection.MemberInfoExtension.GetMemberInfo``1(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            取得屬性或欄位的MemberInfo物件
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="obj">擴充對象</param>
+            <param name="path">路徑</param>
+            <returns>MemberInfo</returns>
+        </member>
+    </members>
+</doc>

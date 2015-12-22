@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AspNet5Template.Extensions.AspNet{
+    /// <summary>
+    /// 針對<see cref="ISession"/>類型的擴充方法
+    /// </summary>
     public static class ISessionExtension{
         /// <summary>
         /// 對指定Key寫入值

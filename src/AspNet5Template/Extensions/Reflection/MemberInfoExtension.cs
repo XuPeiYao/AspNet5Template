@@ -6,6 +6,9 @@ using System.Reflection;
 using System.Threading.Tasks;
 
 namespace AspNet5Template.Extensions.Reflection{
+    /// <summary>
+    /// 針對類別成員取得方式的擴充方法
+    /// </summary>
     public static class MemberInfoExtension{
         /// <summary>
         /// 取得屬性或欄位的MemberInfo物件

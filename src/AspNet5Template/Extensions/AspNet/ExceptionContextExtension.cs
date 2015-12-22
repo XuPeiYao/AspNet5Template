@@ -6,6 +6,9 @@ using System.Reflection;
 using System.Threading.Tasks;
 
 namespace AspNet5Template.Extensions.AspNet{
+    /// <summary>
+    /// 針對ASP.NET 5中的<see cref="ExceptionContext"/>類型的擴充
+    /// </summary>
     public static class ExceptionContextExtension{
         /// <summary>
         /// 取得例外發生的控制器型別

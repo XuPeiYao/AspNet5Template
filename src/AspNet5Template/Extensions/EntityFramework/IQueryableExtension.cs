@@ -8,10 +8,11 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading.Tasks;
 
-
 namespace AspNet5Template.Extensions.EntityFramework{
+    /// <summary>
+    /// 針對EntityFramework的查詢結果的擴充方法
+    /// </summary>
     public static class IQueryableExtension {
-        //實作LazyLoad擴充
         /// <summary>
         /// 完整載入屬性
         /// </summary>

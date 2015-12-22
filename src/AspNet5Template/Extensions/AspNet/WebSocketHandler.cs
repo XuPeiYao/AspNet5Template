@@ -7,6 +7,9 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace AspNet5Template.Extensions.AspNet{
+    /// <summary>
+    /// 為<see cref="IApplicationBuilderExtension.UseWebSockets{Handler}(Microsoft.AspNet.Builder.IApplicationBuilder, Microsoft.AspNet.WebSockets.Server.WebSocketOptions)"/>方法所參考的處理類型
+    /// </summary>
     public abstract class WebSocketHandler{
         /// <summary>
         /// WebSocket連線狀態改變事件

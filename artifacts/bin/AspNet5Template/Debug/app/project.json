@@ -1,0 +1,32 @@
+{
+  "$schema": "",
+  "version": "1.0.0-*",
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
+  "dependencies": {
+    "AspNet5Template": "1.0.0"
+  },
+  "commands": {
+    "web": "Microsoft.AspNet.Server.Kestrel --server.urls=http://localhost:5001"
+  },
+  "frameworks": {
+    "dnx451": {
+      "dependencies": {
+        "System.Linq.Expressions": "4.0.11-beta-23516",
+        "System.Net.Http": "4.0.1-beta-23516"
+      }
+    },
+    "dnxcore50": {}
+  },
+  "exclude": [
+    "wwwroot",
+    "node_modules"
+  ],
+  "publishExclude": [
+    "**.user",
+    "**.vspscc"
+  ],
+  "entryPoint": "AspNet5Template",
+  "loadable": false
+}

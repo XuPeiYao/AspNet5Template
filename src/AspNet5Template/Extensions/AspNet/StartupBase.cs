@@ -11,6 +11,9 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace AspNet5Template.Extensions.AspNet{
+    /// <summary>
+    /// 啟動類別的基礎類型，用以簡化啟動流程與增進功能
+    /// </summary>
     public class StartupBase{
         /// <summary>
         /// 應用程式配置

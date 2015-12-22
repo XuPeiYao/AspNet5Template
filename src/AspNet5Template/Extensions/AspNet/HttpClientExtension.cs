@@ -7,6 +7,9 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace AspNet5Template.Extensions.AspNet{
+    /// <summary>
+    /// 針對<see cref="HttpClient"/>類型的擴充方法
+    /// </summary>
     public static class HttpClientExtension{
         #region Get
         /// <summary>
