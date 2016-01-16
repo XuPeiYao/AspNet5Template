@@ -32,6 +32,11 @@ namespace AspNet5Template.Extensions.AspNet{
         public string RequestPath { get; set; }
 
         /// <summary>
+        /// 緩衝區大小
+        /// </summary>
+        public int BufferSize { get; set; } = 1024 * 4;
+
+        /// <summary>
         /// Handler建構式，您必須至少聲明Request路徑
         /// </summary>
         /// <param name="RequestPath">Request路徑</param>
@@ -54,10 +59,13 @@ namespace AspNet5Template.Extensions.AspNet{
 
             //根據檢查決定是否允許連線
             if (AcceptConditions(Context)) {
+                //通知允許連線
+                OnAcceptConnected?.Invoke(Context, null);
                 //轉發監聽
                 Listen(Context,await Context.WebSockets.AcceptWebSocketAsync());
             } else {
-                
+                //通知拒絕連線
+                OnDenyConnected?.Invoke(Context, null);
             }
         }
 
@@ -84,6 +92,16 @@ namespace AspNet5Template.Extensions.AspNet{
         protected event WebsocketReceiveEvent OnReceive;
 
         /// <summary>
+        /// 當符合連線條件時觸發
+        /// </summary>
+        protected event WebSocketConnectionEvent OnAcceptConnected;
+
+        /// <summary>
+        /// 當不符合連線條件時觸發
+        /// </summary>
+        protected event WebSocketConnectionEvent OnDenyConnected;
+
+        /// <summary>
         /// WebSocket監聽主程序
         /// </summary>
         /// <param name="Context">Http通訊內容</param>
@@ -99,7 +117,7 @@ namespace AspNet5Template.Extensions.AspNet{
                 //循環接收資料以防資料大於緩衝區大小時分段傳輸
                 do {
                     //建立緩衝區
-                    byte[] Buffer = new byte[4 * 1024];
+                    byte[] Buffer = new byte[BufferSize];
 
                     //接收資料
                     ReceiveResult = await Socket.ReceiveAsync(new ArraySegment<byte>(Buffer),CancellationToken.None);

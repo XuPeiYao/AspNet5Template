@@ -28,8 +28,8 @@ namespace AspNet5Template{
             //加入環境變數
             builder.AddEnvironmentVariables();
 
-            //當設定檔變更時重新讀取
-            Configuration = builder.Build().ReloadOnChanged("appsettings.json");
+            //建構設定檔
+            Configuration = builder.Build();
         }
         
         //此方法在執行階段被呼叫，使用此方法在容器中加入服務
@@ -37,12 +37,12 @@ namespace AspNet5Template{
             //加入Application Insights框架服務
             services.AddApplicationInsightsTelemetry(Configuration);
 
-            //EF7
+            /*EF7
             var connection = Configuration["ConnectionString"];
             services.AddEntityFramework()
                 .AddSqlServer()
                 .AddDbContext<BloggingContext>(options => options.UseSqlServer(connection));
-
+            */
             //加入快取
             services.AddCaching();
 
