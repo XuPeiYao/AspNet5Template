@@ -88,7 +88,7 @@ namespace AspNet5Template{
             
             //使用Session
             app.UseSession();
-
+            
             //使用MVC服務，並且載入預設路由設定
             app.UseMvc(ConfigureMvcRoute);
             

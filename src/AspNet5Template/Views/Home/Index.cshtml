@@ -1,0 +1,13 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using AspNet5Template.Models
+@using AspNet5Template.Extensions.AspNet
+@model TestModel
+@{
+    ViewBag.title = "ASP.Net";
+    Layout = "Master";//預設名稱或路徑 ~/Views/Home/Master;
+}
+@ViewBag.title
+
+@Model.Value

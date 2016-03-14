@@ -12,7 +12,8 @@ using Microsoft.Data.Entity.ChangeTracking;
 using Microsoft.Data.Entity.Infrastructure;
 
 namespace AspNet5Template.Models{
-    public class BloggingContext : DbContext {
+    public class TestContext : DbContext {
+        /*
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             modelBuilder.Entity<Blog>(entity => {
                 entity.HasKey(blog => blog.BlogId);
@@ -40,5 +41,6 @@ namespace AspNet5Template.Models{
         public virtual DbSet<Blog> Blog { get; set; }
         public virtual DbSet<Post> Post { get; set; }
         public virtual DbSet<Author> Author { get; set; }
+        */
     }
 }

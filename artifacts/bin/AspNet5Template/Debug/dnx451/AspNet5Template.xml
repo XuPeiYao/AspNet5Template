@@ -292,6 +292,11 @@
             表示Request路徑
             </summary>
         </member>
+        <member name="P:AspNet5Template.Extensions.AspNet.WebSocketHandler.BufferSize">
+            <summary>
+            緩衝區大小
+            </summary>
+        </member>
         <member name="M:AspNet5Template.Extensions.AspNet.WebSocketHandler.#ctor(System.String,System.String)">
             <summary>
             Handler建構式，您必須至少聲明Request路徑
@@ -327,6 +332,16 @@
         <member name="E:AspNet5Template.Extensions.AspNet.WebSocketHandler.OnReceive">
             <summary>
             當WebSocket接收到訊息
+            </summary>
+        </member>
+        <member name="E:AspNet5Template.Extensions.AspNet.WebSocketHandler.OnAcceptConnected">
+            <summary>
+            當符合連線條件時觸發
+            </summary>
+        </member>
+        <member name="E:AspNet5Template.Extensions.AspNet.WebSocketHandler.OnDenyConnected">
+            <summary>
+            當不符合連線條件時觸發
             </summary>
         </member>
         <member name="M:AspNet5Template.Extensions.AspNet.WebSocketHandler.Listen(Microsoft.AspNet.Http.HttpContext,System.Net.WebSockets.WebSocket)">

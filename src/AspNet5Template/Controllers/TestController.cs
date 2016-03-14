@@ -16,9 +16,9 @@ namespace AspNet5Template.Controllers{
     //[Route("api/[controller]")]可使用RouteAttribute方式設定該控制器路由，此方式優先於MapRoute
     [ServiceFilter(typeof(AppExceptionFilterAttribute))]//例外過濾器
     public class TestController : Controller {
-        private BloggingContext db;
+        private TestContext db;
 
-        public TestController(BloggingContext database) {
+        public TestController(TestContext database) {
             db = database;
         }
 
@@ -43,8 +43,10 @@ namespace AspNet5Template.Controllers{
         // DELETE api/values/5
         //[HttpDelete("{id}")] 此為REST設定，僅在RouteAttribute作用時作用
         public void Delete(int id){
+            
         }
 
+        /*
         public async Task<JsonResult> Test() {
             
             //寫入Session
@@ -65,7 +67,7 @@ namespace AspNet5Template.Controllers{
 
             return await Task.FromResult(new JsonResult(result) { StatusCode  = 200 });
         }
-
+        */
         
     }
 }
